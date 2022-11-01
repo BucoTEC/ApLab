@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TestButtonComponent } from './test-button/test-button.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestButtonComponent
+    TestButtonComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule
