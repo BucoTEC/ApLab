@@ -8,10 +8,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class TestButtonComponent implements OnInit {
   @Input() test?: string;
   @Output() childEvent = new EventEmitter();
+  name: string = '';
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onReset() {
+    this.name = '';
+  }
 
   buttonEvent() {
     this.childEvent.emit('Sta ima iz buttona');
