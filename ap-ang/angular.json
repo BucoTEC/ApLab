@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ap-lab-angular": {
+    "ap-ang": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ap-lab-angular",
+            "outputPath": "dist/ap-ang",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ap-lab-angular:build:production"
+              "browserTarget": "ap-ang:build:production"
             },
             "development": {
-              "browserTarget": "ap-lab-angular:build:development"
+              "browserTarget": "ap-ang:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ap-lab-angular:build"
+            "browserTarget": "ap-ang:build"
           }
         },
         "test": {
