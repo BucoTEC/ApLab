@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TopServiceService } from '../top-service.service';
 
 @Component({
   selector: 'app-child',
@@ -9,11 +10,14 @@ export class ChildComponent implements OnInit {
   @Input() title!: string;
   @Output() childContent = new EventEmitter<{ title: string }>();
 
-  constructor() {}
+  constructor(private topService: TopServiceService) {}
 
   heloFromChild(test: string) {
     this.childContent.emit({ title: test });
   }
 
+  testService() {
+    this.topService.sayHello();
+  }
   ngOnInit(): void {}
 }
