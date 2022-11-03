@@ -1,2 +1,5 @@
 <p>parent works!</p>
-<app-child [title]="'Hello world'"></app-child>
+<app-child
+  [title]="'Hello world'"
+  (childContent)="childMessage($event)"
+></app-child>
