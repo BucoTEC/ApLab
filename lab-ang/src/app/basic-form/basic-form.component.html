@@ -1,0 +1,6 @@
+<p>basic-form works!</p>
+<form [formGroup]="userForm" (submit)="onSubmit()">
+  <label for="name">Name</label>
+  <input type="text" name="username" id="name" formControlName="username" />
+  <button type="submit">Submit</button>
+</form>
