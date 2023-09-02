@@ -1,13 +1,16 @@
+using IdentityServer4.Models;
+using IdentityServer4.Test;
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-builder.Services.AddIdentityServer() .AddInMemoryClients(Config.Clients)
-                .AddInMemoryApiScopes(Config.ApiScopes)
-                .AddInMemoryIdentityResources(Config.IdentityResources)
-                .AddTestUsers(TestUsers.Users)
+builder.Services.AddIdentityServer()
+                .AddInMemoryClients(new List<Client>())
+                .AddInMemoryApiScopes(new List<ApiScope>())
+                .AddInMemoryIdentityResources(new List<IdentityResource>())
+                .AddTestUsers(new List<TestUser>())
                 .AddDeveloperSigningCredential();
-
-                //TODO finish identity server configuration
 
 app.MapGet("/", () => "Hello World!");
 
