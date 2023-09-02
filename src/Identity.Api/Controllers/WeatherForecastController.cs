@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Identity.Api.Controllers;
 
 [ApiController]
-[Authorize]
 [Route("[controller]")]
+[Authorize("ClientIdPolicy")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
