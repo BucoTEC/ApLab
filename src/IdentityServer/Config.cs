@@ -12,9 +12,9 @@ namespace IdentityServer
 {
     public class Config
     {
-                public static IEnumerable<Client> Clients =>
-            new Client[]
-            {
+        public static IEnumerable<Client> Clients =>
+    new Client[]
+    {
                    new Client
                    {
                         ClientId = "movieClient",
@@ -49,12 +49,12 @@ namespace IdentityServer
                            IdentityServerConstants.StandardScopes.OpenId,
                            IdentityServerConstants.StandardScopes.Profile,
                            IdentityServerConstants.StandardScopes.Address,
-                           IdentityServerConstants.StandardScopes.Email,                           
+                           IdentityServerConstants.StandardScopes.Email,
                            "movieAPI",
                            "roles"
                        }
                    }
-            };
+    };
 
         public static IEnumerable<ApiScope> ApiScopes =>
            new ApiScope[]
