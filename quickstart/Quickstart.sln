@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{8A8A8257-7261-4CED-9196-5956E3B64B7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{83618D3F-5220-4981-9EE7-D9F0665B2161}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{8A8A8257-7261-4CED-9196-5956E3B64B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A8A8257-7261-4CED-9196-5956E3B64B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A8A8257-7261-4CED-9196-5956E3B64B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83618D3F-5220-4981-9EE7-D9F0665B2161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83618D3F-5220-4981-9EE7-D9F0665B2161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83618D3F-5220-4981-9EE7-D9F0665B2161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83618D3F-5220-4981-9EE7-D9F0665B2161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
