@@ -3,28 +3,31 @@
 	"accountId": "4e14377a-1071-4264-8957-cfc5752eff57",
 	"contactId": "f640f1e8-7c80-4c8d-9ec1-36953d23731b",
 	"locationNumber": 3832,
+	"subject": "Ws: 1- Tour Booked @ BELGRADE, USCE Tower",
 	"date": "2023-09-08T13:45:00Z",
 	"time": "T13:45:00Z",
 	"endTime": "T14:45:00Z",
+	"duration": "60",
 	"actionId": 0,
 	"statusId": 1,
+	"opportunityReferenceNumber": "OPP-276884",
 	"opportunityId": "211778c2-2139-4d09-809b-098d21c224e0",
-	"typeId": "6",
+	"typeId": 6,
 	"subTypeId": 601,
 	"ownerId": "372242",
 	"createdBy": "372242",
 	"productTypeId": 0,
 	"productVariantId": 0,
 	"isDeleted": false,
-	"timeStamp": "\"0000330e-0000-0d00-0000-64fb07b20000\"",
+	"timeStamp": "\"0000380e-0000-0d00-0000-64fb07c60000\"",
 	"externalReferenceIds": [
 		{
-			"SystemName": "Dynamics/Tour/ActivityId",
-			"Identifier": "950a942d-3c4e-ee11-be6e-0022489bc541"
+			"systemName": "Dynamics/Tour/ActivityId",
+			"identifier": "950a942d-3c4e-ee11-be6e-0022489bc541"
 		},
 		{
-			"SystemName": "Proton/Opportunity/Id",
-			"Identifier": "211778c2-2139-4d09-809b-098d21c224e0"
+			"systemName": "Proton/Opportunity/Id",
+			"identifier": "211778c2-2139-4d09-809b-098d21c224e0"
 		}
 	],
 	"extendedData": [
@@ -33,35 +36,29 @@
 			"value": "SRB"
 		},
 		{
-			"Key": "EndTime",
-			"Value": "T14:45:00Z"
+			"key": "EndTime",
+			"value": "T14:45:00Z"
 		},
 		{
-			"Key": "DurationMinutes",
-			"Value": "60"
+			"key": "DurationMinutes",
+			"value": "60"
 		},
 		{
-			"Key": "Subject",
-			"Value": "Ws: 1- Tour Booked @ BELGRADE, USCE Tower"
+			"key": "Subject",
+			"value": "Ws: 1- Tour Booked @ BELGRADE, USCE Tower"
 		},
 		{
-			"Key": "DynamicsIgnore",
-			"Value": "0"
+			"key": "DynamicsIgnore",
+			"value": "0"
 		},
 		{
-			"Key": "PivotalIgnore",
-			"Value": "0"
+			"key": "PivotalIgnore",
+			"value": "0"
 		}
 	],
 	"createDate": "2023-09-08T11:37:44.7175197Z",
-	"editDate": "2023-09-08T11:38:26.3635544Z",
+	"editDate": "2023-09-08T11:38:46.3132179Z",
 	"systemCaller": "5c7e8553e20a05059cd3f14d",
 	"originSystemCaller": "6260056046346118f0ed7d7c",
-	"originCreateDate": "2023-09-08T11:37:44.7175197Z",
-	"@EntityName": "pro_tour",
-	"@xmlns:local": "urn:local",
-	"duration": "60",
-	"notes": null,
-	"opportunityReferenceNumber": "OPP-276884",
-	"subject": "Ws: 1- Tour Booked @ BELGRADE, USCE Tower"
+	"originCreateDate": "2023-09-08T11:37:44.7175197Z"
 }
