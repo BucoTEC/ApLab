@@ -11,6 +11,10 @@ try
 {
     var builder = WebApplication.CreateBuilder(args);
 
+    builder.Services.AddIdentityServer()
+           .AddInMemoryApiScopes(Config.ApiScopes)
+           .AddInMemoryClients(Config.Clients);
+
     builder.Host.UseSerilog((ctx, lc) => lc
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")
         .Enrich.FromLogContext()
@@ -19,7 +23,7 @@ try
     var app = builder
         .ConfigureServices()
         .ConfigurePipeline();
-    
+
     app.Run();
 }
 catch (Exception ex)
