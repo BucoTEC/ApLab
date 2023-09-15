@@ -1,4 +1,6 @@
+using Azure.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Graph;
 
 namespace ISR4.Controllers;
 
@@ -19,14 +21,38 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    public string Get()
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        var scopes = new[] { "User.Read" };
+
+        // Multi-tenant apps can use "common",
+        // single-tenant apps must use the tenant ID from the Azure portal
+        var tenantId = "common";
+
+        // Value from app registration
+        var clientId = "YOUR_CLIENT_ID";
+
+        // using Azure.Identity;
+        var options = new DeviceCodeCredentialOptions
         {
-            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        })
-        .ToArray();
+            AuthorityHost = AzureAuthorityHosts.AzurePublicCloud,
+            ClientId = clientId,
+            TenantId = tenantId,
+            // Callback function that receives the user prompt
+            // Prompt contains the generated device code that user must
+            // enter during the auth process in the browser
+            DeviceCodeCallback = (code, cancellation) =>
+            {
+                Console.WriteLine(code.Message);
+                return Task.FromResult(0);
+            },
+        };
+
+        // https://learn.microsoft.com/dotnet/api/azure.identity.devicecodecredential
+        var deviceCodeCredential = new DeviceCodeCredential(options);
+
+        var graphClient = new GraphServiceClient(deviceCodeCredential, scopes);
+
+        return "hello";
     }
 }
