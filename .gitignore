@@ -40,6 +40,7 @@ bld/
 appsettings.Development.json
 
 ./appsettings.Development.json
+appsettings.Prod.json
 
 
 # Visual Studio 2015/2017 cache/options directory

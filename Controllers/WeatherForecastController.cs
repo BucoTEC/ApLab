@@ -8,39 +8,51 @@ namespace ISR4.Controllers;
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
-    [HttpGet(Name = "graph")]
-    public string Get()
+    private readonly IConfiguration _config;
+
+    public WeatherForecastController(IConfiguration configuration)
     {
+        _config = configuration;
+    }
+
+    [HttpPost("user-date")]
+    public async Task<string> GetUserData(string userName, string password)
+    {
+        var graphApiConfig = _config.GetSection("GraphApi");
         var scopes = new[] { "User.Read" };
 
         // Multi-tenant apps can use "common",
         // single-tenant apps must use the tenant ID from the Azure portal
-        var tenantId = "common";
+        var tenantId = graphApiConfig["tenantId"];
 
         // Value from app registration
-        var clientId = "YOUR_CLIENT_ID";
+        var clientId = graphApiConfig["appId"];
 
         // using Azure.Identity;
-        var options = new DeviceCodeCredentialOptions
+
+
+        // using Azure.Identity;
+        var options = new UsernamePasswordCredentialOptions
         {
             AuthorityHost = AzureAuthorityHosts.AzurePublicCloud,
-            ClientId = clientId,
-            TenantId = tenantId,
-            // Callback function that receives the user prompt
-            // Prompt contains the generated device code that user must
-            // enter during the auth process in the browser
-            DeviceCodeCallback = (code, cancellation) =>
-            {
-                Console.WriteLine(code.Message);
-                return Task.FromResult(0);
-            },
         };
 
-        // https://learn.microsoft.com/dotnet/api/azure.identity.devicecodecredential
-        var deviceCodeCredential = new DeviceCodeCredential(options);
 
-        var graphClient = new GraphServiceClient(deviceCodeCredential, scopes);
+        // https://learn.microsoft.com/dotnet/api/azure.identity.usernamepasswordcredential
+        var userNamePasswordCredential = new UsernamePasswordCredential(
+            userName, password, tenantId, clientId, options);
 
-        return "hello";
+        var client = new GraphServiceClient(userNamePasswordCredential, scopes);
+
+
+        var requestAllUsers = await client.Users.GetAsync();
+
+        foreach (var user in requestAllUsers.Value)
+        {
+            Console.WriteLine(user.Id + ": " + user.DisplayName + " <" + user.Mail + ">");
+        }
+
+
+        return "Hello";
     }
 }
