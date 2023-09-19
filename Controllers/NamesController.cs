@@ -17,5 +17,11 @@ namespace ISR4.Controllers
         {
             return Ok(Data.NamesList);
         }
+
+        [Authorize(Roles = "Api.ReadWrite")]
+        public IActionResult AddNames()
+        {
+            return Ok("Name added");
+        }
     }
 }
