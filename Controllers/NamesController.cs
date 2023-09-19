@@ -13,12 +13,14 @@ namespace ISR4.Controllers
     public class NamesController : ControllerBase
     {
         [Authorize(Roles = "Api.ReadWrite,Api.ReadOnly")]
+        [HttpGet]
         public IActionResult GetNames()
         {
             return Ok(Data.NamesList);
         }
 
         [Authorize(Roles = "Api.ReadWrite")]
+        [HttpGet("add")]
         public IActionResult AddNames()
         {
             return Ok("Name added");
