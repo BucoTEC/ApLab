@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageVersion>1</PackageVersion>
+  </PropertyGroup>
+
 </Project>
