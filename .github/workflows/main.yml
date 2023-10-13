@@ -42,7 +42,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: nugetPackage
-        path: Contracts/Contracts/bin/Release/ 
+        path: AuctionContracts//Contracts/bin/Release/ 
         
   release:
     runs-on: ubuntu-latest    
