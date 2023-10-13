@@ -15,6 +15,6 @@ namespace Contracts.Hello
         {
             Console.WriteLine("Hello world");
             return "Hello my friend";
-        }
+        } // update
     }
 }
