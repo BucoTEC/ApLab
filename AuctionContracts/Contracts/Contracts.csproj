@@ -4,11 +4,11 @@
     <TargetFramework>net7.0</TargetFramework>
     <RepositoryUrl>https://github.com/BucoTEC/NuNPackage</RepositoryUrl>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disabled</Nullable>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageVersion>1.0.3</PackageVersion>
   </PropertyGroup>
 
 </Project>
